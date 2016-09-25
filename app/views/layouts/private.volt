@@ -20,7 +20,7 @@
 
 <div class="ui bottom attached segment">
   <!-- MAIN SIDEBAR MENU -->
-  <div class="ui vertical inverted visible sidebar menu" id="sidebarMenu">
+  <div class="ui vertical inverted sidebar menu" id="sidebarMenu">
     <div class="item">
       <h2 class="inverted">SOLVED</h2>
     </div>

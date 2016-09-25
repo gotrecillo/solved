@@ -8,6 +8,7 @@ use Solved\Forms\ChangePasswordForm;
 use Solved\Forms\UsersForm;
 use Solved\Models\Users;
 use Solved\Models\PasswordChanges;
+use \DataTables\DataTable;
 
 /**
 * Solved\Controllers\UsersController
@@ -18,16 +19,29 @@ class UsersController extends ControllerBase
 
   public function initialize()
   {
+    parent::initialize();
     $this->view->setTemplateBefore('private');
   }
 
   /**
-  * Default action, shows the search form
+  * Default action, shows the datatable with the users
   */
   public function indexAction()
   {
-    $this->persistent->conditions = null;
-    $this->view->form = new UsersForm();
+    $this->headerCssCollection->addCss("//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.1/semantic.min.css", false);
+
+    $this->footerCollection->addJs("lib/DataTables/datatables.min.js");
+    $this->footerCollection->addJs("js/views/users/index.js");
+
+    if ($this->request->isAjax()) {
+      $builder = $this->modelsManager
+                      ->createBuilder()
+                      ->columns('id, name, email, active')
+                      ->from('Solved\Models\Users');
+
+      $dataTables = new DataTable();
+      $dataTables->fromBuilder($builder)->sendResponse();
+    }
   }
 
   /**

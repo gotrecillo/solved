@@ -10,6 +10,22 @@ use Phalcon\Mvc\Dispatcher;
 */
 class ControllerBase extends Controller
 {
+
+  public function initialize()
+  {
+    $this->headerCssCollection = $this->assets->collection("headerCss");
+    $this->headerJsCollection = $this->assets->collection("headerJs");
+    $this->footerCollection = $this->assets->collection("footer");
+
+    $this->headerCssCollection->addCss("css/semantic/dist/semantic.min.css");
+
+    $this->footerCollection->addJs("//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false);
+    $this->footerCollection->addJs("css/semantic/dist/semantic.min.js");
+
+    $this->headerCssCollection->addCss("css/views/menu/menu.css");
+    $this->footerCollection->addJs("js/views/menu/menu.js");
+  }
+
   /**
   * Execute before the router so we can determine if this is a private controller, and must be authenticated, or a
   * public controller that is open to all.
@@ -19,15 +35,6 @@ class ControllerBase extends Controller
   */
   public function beforeExecuteRoute(Dispatcher $dispatcher)
   {
-    $headerCssCollection = $this->assets->collection("headerCss");
-    $headerJsCollection = $this->assets->collection("headerJs");
-    $footerCollection = $this->assets->collection("footer");
-
-    $headerCssCollection->addCss("css/semantic/dist/semantic.min.css");
-
-    $footerCollection->addJs("//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false);
-    $footerCollection->addJs("css/semantic/dist/semantic.min.js");
-
     $controllerName = $dispatcher->getControllerName();
 
     // Only check permissions on private controllers
@@ -67,8 +74,7 @@ class ControllerBase extends Controller
       }
     }
 
-    $headerCssCollection->addCss("css/views/menu/menu.css");
-    $footerCollection->addJs("js/views/menu/menu.js");
+
 
   }
 }

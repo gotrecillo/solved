@@ -4,6 +4,7 @@ $(document).ready(function() {
   $("#sidebarMenu")
     .sidebar(
       {
+        transition: "scale down",
         dimPage: false,
         closable: false,
         context: $(".bottom.segment")
