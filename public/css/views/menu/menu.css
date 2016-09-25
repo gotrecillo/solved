@@ -1,0 +1,11 @@
+#sidebarMenu .menu .item {
+  padding-right: 0;
+}
+
+.left-floated {
+  float: left !important;
+}
+
+.icon.left-floated {
+  margin-right: .5em !important;
+}

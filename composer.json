@@ -1,0 +1,26 @@
+{
+    "name": "gotrecillo/solved",
+    "description": "This is a simple crm/erp application based on the PHP framework Phalcon ",
+    "version": "0.0.1",
+    "keywords": [
+        "phalcon",
+        "framework",
+        "intranet",
+        "crm",
+        "erp"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/gotrecillo",
+    "authors" : [
+        {
+            "name" : "Sergio Panadero Pérez",
+            "email" : "sergio.panadero.perez@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ext-phalcon": ">=3.0.0",
+        "swiftmailer/swiftmailer": "^5.4"
+    }
+}
