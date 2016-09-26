@@ -60,6 +60,8 @@
   <!-- END MAIN SIDEBAR MENU -->
 
   <div id="contentPusher" class="pusher">
-    {{content()}}
+    <div class="private-content-container">
+        {{content()}}
+    </div>
   </div>
 </div>

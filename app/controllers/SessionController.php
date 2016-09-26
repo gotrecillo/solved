@@ -19,6 +19,7 @@ class SessionController extends ControllerBase
   */
   public function initialize()
   {
+    parent::initialize();
     $this->view->setTemplateBefore('public');
   }
 
@@ -31,7 +32,7 @@ class SessionController extends ControllerBase
   * Allow a user to signup to the system
   * protected untill we activate this functionality
   */
-  protected function signupAction()
+  public function signupAction()
   {
     $form = new SignUpForm();
 

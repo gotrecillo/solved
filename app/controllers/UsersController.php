@@ -31,6 +31,7 @@ class UsersController extends ControllerBase
     $this->headerCssCollection->addCss("//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.1/semantic.min.css", false);
 
     $this->footerCollection->addJs("lib/DataTables/datatables.min.js");
+    $this->footerCollection->addJs("https://cdn.datatables.net/1.10.12/js/dataTables.semanticui.min.js", false);
     $this->footerCollection->addJs("js/views/users/index.js");
 
     if ($this->request->isAjax()) {

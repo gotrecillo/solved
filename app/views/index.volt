@@ -9,7 +9,6 @@
 		{{ assets.outputJs('headerJs') }}
 	</head>
 	<body>
-
 		{{ content() }}
 		{{ assets.outputJs('footer')}}
 	</body>

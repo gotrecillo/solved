@@ -9,3 +9,7 @@
 .icon.left-floated {
   margin-right: .5em !important;
 }
+
+.private-content-container {
+  padding: 1em !important;
+}
