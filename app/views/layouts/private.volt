@@ -61,7 +61,8 @@
 
   <div id="contentPusher" class="pusher">
     <div class="private-content-container">
-        {{content()}}
+      {{flash.output()}}
+      {{content()}}
     </div>
   </div>
 </div>

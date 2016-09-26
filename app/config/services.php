@@ -7,7 +7,7 @@ use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Files as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
-use Phalcon\Flash\Direct as Flash;
+use Solved\Helpers\MyFlash as Flash;
 use Phalcon\Logger\Adapter\File as FileLogger;
 use Phalcon\Logger\Formatter\Line as FormatterLine;
 use Solved\Auth\Auth;
@@ -125,10 +125,10 @@ $di->set('router', function () {
  */
 $di->set('flash', function () {
     return new Flash([
-        'error' => 'alert alert-danger',
-        'success' => 'alert alert-success',
-        'notice' => 'alert alert-info',
-        'warning' => 'alert alert-warning'
+        'error' => 'ui red message',
+        'success' => 'ui green message',
+        'notice' => 'ui blue message',
+        'warning' => 'ui yellow message'
     ]);
 });
 

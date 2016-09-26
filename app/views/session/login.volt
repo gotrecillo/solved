@@ -1,6 +1,5 @@
 <div class="ui middle aligned center aligned grid">
   <div class="column">
-
 		<h2 class="ui teal image header">
 			{{image("img/logo.png", "class":"image")}}
 	    <div class="content">
@@ -10,13 +9,14 @@
 
 		{{ form('class': 'ui large form') }}
 	    <div class="ui stacked segment">
+        {{flash.output()}}
 				{{ MyTags.iconField(['icon':'mail', 'element':'email', 'form': form])}}
 				{{ MyTags.iconField(['icon':'lock', 'element':'password', 'form': form])}}
 
 				{{ form.render('Entrar') }}
 
         <div class="ui divider"></div>
-        
+
 				{{ MyTags.checkbox(['element':'remember', 'form': form])}}
 
 			</div>

@@ -24,6 +24,10 @@ class ControllerBase extends Controller
 
     $this->headerCssCollection->addCss("css/views/menu/menu.css");
     $this->footerCollection->addJs("js/views/menu/menu.js");
+    $this->footerCollection->addJs("js/views/layouts/index.js");
+
+    $this->headerJsCollection->addJs("js/constants.js");
+    $this->headerJsCollection->addJs("js/templates.js");
   }
 
   /**

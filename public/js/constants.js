@@ -1,0 +1,3 @@
+var siteConfig = {
+  baseUri: "/solved/"
+}

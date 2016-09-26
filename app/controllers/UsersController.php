@@ -156,7 +156,7 @@ class UsersController extends ControllerBase
   {
     $user = Users::findFirstById($id);
     if (!$user) {
-      $this->flash->error("User was not found");
+      $this->flash->error("No existe usuario en el sistema con ese id");
       return $this->dispatcher->forward([
         'action' => 'index'
       ]);
@@ -165,7 +165,7 @@ class UsersController extends ControllerBase
     if (!$user->delete()) {
       $this->flash->error($user->getMessages());
     } else {
-      $this->flash->success("User was deleted");
+      $this->flash->success("Usuario borrado");
     }
 
     return $this->dispatcher->forward([
