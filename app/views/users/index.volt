@@ -19,15 +19,10 @@
 </div>
 <!-- END DATATABLE -->
 
-<!-- DELETE MODAL -->
-<div class="ui modal small" id="deleteModal">
-  <div class="header">Borrar usuario</div>
-  <div class=" content">
-    ¿Estás seguro de borrar el usuario?
-  </div>
-  <div class="actions">
-    <div class="ui approve button teal">Borrar</div>
-    <div class="ui cancel button red">Cancelar</div>
-  </div>
-</div>
-<!-- END DELETE MODAL -->
+{{ MyTags.confirmModal([
+  'id':'deleteModal',
+  'head':'Borrar usuario',
+  'content':'¿Estás seguro de borrar el usuario?',
+  'acceptLabel':'Borrar',
+  'cancelLabel':'Cancelar'
+  ])}}

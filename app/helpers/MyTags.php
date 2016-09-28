@@ -49,5 +49,26 @@ EOD;
     return $code;
   }
 
+  public function confirmModal($parameters){
+    $id          = $parameters["id"];
+    $head        = $parameters["head"];
+    $content     = $parameters["content"];
+    $acceptLabel = $parameters["acceptLabel"];
+    $cancelLabel = $parameters["cancelLabel"];
+
+    $code = <<<EOD
+    <div class="ui modal small" id="$id">
+      <div class="header">$head</div>
+      <div class=" content">
+        $content
+      </div>
+      <div class="actions">
+        <div class="ui approve button teal">$acceptLabel</div>
+        <div class="ui cancel button red">$cancelLabel</div>
+      </div>
+    </div>
+EOD;
+
+  }
 
 }
